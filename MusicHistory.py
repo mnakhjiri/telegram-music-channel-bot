@@ -24,7 +24,7 @@ async def main():
     async with Client("my_account", api_id, api_hash,proxy=proxy) as app:
         await app.send_message("me", "Updating Database for music channel")
         conn = sqlite3.connect('database.db')
-        async for message in app.get_chat_history("cultmusicbar"):
+        async for message in app.get_chat_history("channel_id"):
             try:
                 conn.execute("INSERT INTO MUSIC (CHAT_ID, MUSIC_NAME, MUSIC_FILE_ID , PERFORMER) VALUES (?, ?, ? , ?)",
                              (channel_id_number, message.audio.title, message.audio.file_id, message.audio.performer))
