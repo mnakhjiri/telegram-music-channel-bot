@@ -1,0 +1,3 @@
+pyTelegramBotAPI==4.9.0
+Pyrogram==2.0.97
+uvloop==0.17.0
